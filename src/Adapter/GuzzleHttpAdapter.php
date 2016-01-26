@@ -119,7 +119,7 @@ class GuzzleHttpAdapter implements AdapterInterface
     public function post($url, $content = '')
     {
         $options = [];
-        $options['body'] = $content;
+        $options['form_params'] = $content;
 
         try
         {
