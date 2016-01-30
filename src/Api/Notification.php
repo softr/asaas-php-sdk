@@ -27,7 +27,7 @@ class Notification extends \Softr\Asaas\Api\AbstractApi
 
         return array_map(function($notification)
         {
-            return new NotificationEntity($notification->notification);
+            return new NotificationEntity($notification);
         }, $notifications->data);
     }
 
