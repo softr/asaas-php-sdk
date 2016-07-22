@@ -91,6 +91,10 @@ final class Payment extends \Softr\Asaas\Entity\AbstractEntity
     /**
      * @var int
      */
+    public $installment;
+    /**
+     * @var int
+     */
     public $installmentCount;
 
     /**
