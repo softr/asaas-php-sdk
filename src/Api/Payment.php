@@ -74,7 +74,7 @@ class Payment extends \Softr\Asaas\Api\AbstractApi
      * @param   array  $filters         (optional) Filters Array
      * @return  PaymentEntity
      */
-    public function getBySubscription($subscriptionId)
+    public function getBySubscription($subscriptionId, array $filters = [])
     {
         $payments = $this->adapter->get(sprintf('%s/subscriptions/%s/payments?%s', $this->endpoint, $subscriptionId, http_build_query($filters)));
 
