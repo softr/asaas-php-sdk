@@ -27,7 +27,7 @@ class Customer extends \Softr\Asaas\Api\AbstractApi
 
         return array_map(function($customer)
         {
-            return new CustomerEntity($customer->customer);
+            return new CustomerEntity($customer);
         }, $customers->data);
     }
 
