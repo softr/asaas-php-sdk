@@ -183,10 +183,10 @@ $action123 = $asaas->city()->getById(123);
 Documentação Oficial
 --------------------
 
-Obs.: Esta é uma API não oficial baseada na API ASAAS v2. A documentação oficial da última versão da API ASAAS está disponibilizada [neste link](https://asaasv3.docs.apiary.io).
+Obs.: Esta é uma API não oficial baseada na API ASAAS v3. A documentação oficial da API ASAAS está disponibilizada [neste link](https://asaasv3.docs.apiary.io).
 
 
-Creditos
+Créditos
 --------
 
 * [Agência Softr Ltda - www.softr.com.br](http://www.softr.com.br)
