@@ -61,7 +61,7 @@ final class Customer extends \Softr\Asaas\Entity\AbstractEntity
     /**
      * @var string Identificador do cliente no seu sistema
      */
-    public externalReference;
+    public $externalReference;
     
     /**
      * @var bool
