@@ -23,7 +23,7 @@ abstract class AbstractApi
      *
      * @var string
      */
-    const ENDPOINT_HOMOLOGACAO = 'http://homolog.asaas.com/api/v3';
+    const ENDPOINT_HOMOLOGACAO = 'http://sandbox.asaas.com/api/v3';
 
     /**
      * Http Adapter Instance
