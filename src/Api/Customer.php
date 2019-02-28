@@ -71,7 +71,7 @@ class Customer extends \Softr\Asaas\Api\AbstractApi
     /**
      * Get Customer By Email
      *
-     * @param   string  $email  Customer Id
+     * @param   string  $email  Customer e-mail
      * @return  CustomerEntity
      */
     public function getByEmail($email)
