@@ -57,12 +57,12 @@ final class Customer extends \Softr\Asaas\Entity\AbstractEntity
      * @var string
      */
     public $province;
-    
+
     /**
      * @var string Identificador do cliente no seu sistema
      */
     public $externalReference;
-    
+
     /**
      * @var bool
 	 * @deprecated Property not found on v3 API
@@ -108,12 +108,12 @@ final class Customer extends \Softr\Asaas\Entity\AbstractEntity
      * @var string
      */
     public $additionalEmails;
-    
+
     /**
      * @var string
      */
     public $municipalInscription;
-    
+
     /**
      * @var string
      */

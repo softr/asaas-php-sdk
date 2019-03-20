@@ -91,10 +91,6 @@ final class Payment extends \Softr\Asaas\Entity\AbstractEntity
     /**
      * @var int
      */
-    public $installment;
-    /**
-     * @var int
-     */
     public $installmentCount;
 
     /**
@@ -196,6 +192,11 @@ final class Payment extends \Softr\Asaas\Entity\AbstractEntity
      * @var string
      */
     public $creditCardHolderMobilePhoneDDD;
+
+    /**
+     * @var string Identificador do título no sistema origem
+     */
+    public $externalReference;
 
     /**
      * @param  string  $dueDate

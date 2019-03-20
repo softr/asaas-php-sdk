@@ -3,7 +3,6 @@ namespace Softr\Asaas\Api;
 
 // Entities
 use Softr\Asaas\Entity\Payment as PaymentEntity;
-use Softr\Asaas\Entity\Installment as InstallmentEntity;
 
 /**
  * Payment API Endpoint
@@ -66,21 +65,6 @@ class Payment extends \Softr\Asaas\Api\AbstractApi
         {
             return new PaymentEntity($payment);
         }, $payments->data);
-    }
-
-     /**
-     * Get Payment By Installment Id
-     *
-     * @param   int  $installmentId   Installment Id
-     * @return  PaymentEntity
-     */
-     public function getByInstallmentId($installmentId)
-     {
-        $installment = $this->adapter->get(sprintf('%s/payments?installment=%s', $this->endpoint, $installmentId));
-
-        $installment = json_decode($installment);
-
-        return new InstallmentEntity($installment);
     }
 
     /**
