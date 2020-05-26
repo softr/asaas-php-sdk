@@ -5,10 +5,9 @@ namespace Softr\Asaas\Adapter;
 use Softr\Asaas\Exception\HttpException;
 
 // Guzzle
-use Guzzle\Http\Client;
-use Guzzle\Http\ClientInterface;
-use Guzzle\Http\Exception\RequestException;
-
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\RequestException;
 
 /**
  * Guzzle Adapter
