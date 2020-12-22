@@ -194,6 +194,11 @@ final class Payment extends \Softr\Asaas\Entity\AbstractEntity
     public $creditCardHolderMobilePhoneDDD;
 
     /**
+     * @var string Identificador do título no sistema origem
+     */
+    public $externalReference;
+
+    /**
      * @param  string  $dueDate
      */
     public function setDueDate($dueDate)

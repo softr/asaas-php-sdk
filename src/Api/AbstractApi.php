@@ -16,14 +16,21 @@ abstract class AbstractApi
      *
      * @var string
      */
-    const ENDPOINT_PRODUCAO = 'https://www.asaas.com/api/v2';
+    const ENDPOINT_PRODUCAO = 'https://www.asaas.com/api/v3';
 
     /**
      * Endpoint Homologação
      *
      * @var string
      */
-    const ENDPOINT_HOMOLOGACAO = 'http://homolog.asaas.com/api/v2';
+    const ENDPOINT_HOMOLOGACAO = 'https://sandbox.asaas.com/api/v3';
+
+    /**
+     * Endpoint Sandbox
+     *
+     * @var string
+     */
+    const ENDPOINT_SANDBOX = 'https://sandbox.asaas.com/api/v3';
 
     /**
      * Endpoint Sandbox

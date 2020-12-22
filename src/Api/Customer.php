@@ -47,22 +47,36 @@ class Customer extends \Softr\Asaas\Api\AbstractApi
     }
 
     /**
+     * Get Customer By Name
+     *
+     * @param   string  $name  Customer Name
+     * @return  CustomerEntity
+     */
+    public function getByName($name)
+    {
+        return $this->getAll(['name' => $name]);
+    }
+
+    /**
+     * Get Customer By CPF/CNPJ
+     *
+     * @param   string  $cpfCnpj  Customer CPF / CNPJ
+     * @return  CustomerEntity
+     */
+    public function getByCpfCnpj($cpfCnpj)
+    {
+        return $this->getAll(['cpfCnpj' => $cpfCnpj]);
+    }
+
+    /**
      * Get Customer By Email
      *
-     * @param   string  $email  Customer Id
+     * @param   string  $email  Customer e-mail
      * @return  CustomerEntity
      */
     public function getByEmail($email)
     {
-        foreach($this->getAll(['name' => $email]) as $customer)
-        {
-            if($customer->email == $email)
-            {
-                return $customer;
-            }
-        }
-
-        return;
+        return $this->getAll(['email' => $email]);
     }
 
     /**
