@@ -159,8 +159,20 @@ class GuzzleHttpAdapter implements AdapterInterface
     {
         $body = (string) $this->response->getBody();
         $code = (int) $this->response->getStatusCode();
-        $content = json_decode($body);
-        $error = $content->errors[0];
 
+        $content = json_decode($body);
+		
+		$errors = [];
+		if (isset($content->errors)) {
+			foreach ((array)$content->errors as $error) {
+				$errors[] = $error->code . ': ' . $error->description;
+			}
+		}
+
+		if (!empty($errors)) {
+			throw new HttpException(implode('<br>', $errors), $code);
+		}
+
+        throw new HttpException(isset($content->message) ? $content->message : 'Request not processed.', $code);
     }
 }
