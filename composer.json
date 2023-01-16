@@ -1,5 +1,5 @@
 {
-    "name"       : "softr/asaas-php-sdk",
+    "name"       : "lupainformatica/asaas-php-sdk",
     "type"       : "library",
     "description": "Asaas.com PHP API Wrapper",
     "keywords"   : ["Asaas", "API", "Payment SaaS", "Credit Card", "Boleto"],
