@@ -1,4 +1,5 @@
 <?php
+
 namespace Softr\Asaas\Api;
 
 // Entities
@@ -17,6 +18,23 @@ class Subscription extends \Softr\Asaas\Api\AbstractApi
      * @param   array  $filters  (optional) Filters Array
      * @return  array  Subscriptions Array
      */
+    public function getList(array $filters = [])
+    {
+        $subscriptions = $this->adapter->get(sprintf('%s/subscriptions?%s', $this->endpoint, http_build_query($filters)));
+
+        $subscriptions = json_decode($subscriptions);
+
+        $this->extractMeta($subscriptions);
+
+        return $subscriptions;
+    }
+
+    /**
+     * Get all subscriptions
+     *
+     * @param   array  $filters  (optional) Filters Array
+     * @return  array  Subscriptions Array
+     */
     public function getAll(array $filters = [])
     {
         $subscriptions = $this->adapter->get(sprintf('%s/subscriptions?%s', $this->endpoint, http_build_query($filters)));
@@ -25,9 +43,8 @@ class Subscription extends \Softr\Asaas\Api\AbstractApi
 
         $this->extractMeta($subscriptions);
 
-        return array_map(function($subscription)
-        {
-            return new SubscriptionEntity($subscription->subscription);
+        return array_map(function ($subscription) {
+            return new SubscriptionEntity($subscription);
         }, $subscriptions->data);
     }
 
@@ -61,9 +78,8 @@ class Subscription extends \Softr\Asaas\Api\AbstractApi
 
         $this->extractMeta($subscriptions);
 
-        return array_map(function($subscription)
-        {
-            return new SubscriptionEntity($subscription->subscription);
+        return array_map(function ($subscription) {
+            return new SubscriptionEntity($subscription);
         }, $subscriptions->data);
     }
 
