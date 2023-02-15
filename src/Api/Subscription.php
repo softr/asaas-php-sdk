@@ -13,12 +13,12 @@ use Softr\Asaas\Entity\Subscription as SubscriptionEntity;
 class Subscription extends \Softr\Asaas\Api\AbstractApi
 {
     /**
-     * Get all subscriptions
+     * Get paginate subscriptions
      *
      * @param   array  $filters  (optional) Filters Array
      * @return  array  Subscriptions Array
      */
-    public function getList(array $filters = [])
+    public function getPaginate(array $filters = [])
     {
         $subscriptions = $this->adapter->get(sprintf('%s/subscriptions?%s', $this->endpoint, http_build_query($filters)));
 
