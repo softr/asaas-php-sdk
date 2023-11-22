@@ -9,6 +9,11 @@ namespace Softr\Asaas\Entity;
 final class Payment extends \Softr\Asaas\Entity\AbstractEntity
 {
     /**
+     * @var string
+     */
+    public $object;
+
+    /**
      * @var int
      */
     public $id;
@@ -21,12 +26,52 @@ final class Payment extends \Softr\Asaas\Entity\AbstractEntity
     /**
      * @var string
      */
+    public $installment;
+
+    /**
+     * @var string
+     */
+    public $paymentLink;
+
+    /**
+     * @var string
+     */
     public $subscription;
 
     /**
      * @var string
      */
     public $billingType;
+
+    /**
+     * @var bool
+     */
+    public $canBePaidAfterDueDate;
+
+    /**
+     * @var bool
+     */
+    public $deleted;
+
+    /**
+     * @var bool
+     */
+    public $anticipated;
+
+    /**
+     * @var bool
+     */
+    public $anticipable;
+
+    /**
+     * @var bool
+     */
+    public $postalService;
+
+    /**
+     * @var string
+     */
+    public $pixTransaction;
 
     /**
      * @var float
@@ -86,7 +131,17 @@ final class Payment extends \Softr\Asaas\Entity\AbstractEntity
     /**
      * @var string
      */
+    public $transactionReceiptUrl;
+
+    /**
+     * @var string
+     */
     public $boletoUrl;
+
+    /**
+     * @var string
+     */
+    public $bankSlipUrl;
 
     /**
      * @var int
@@ -199,10 +254,70 @@ final class Payment extends \Softr\Asaas\Entity\AbstractEntity
     public $externalReference;
 
     /**
+     * @var int
+     */
+    public $installmentNumber;
+
+    /**
+     * @var array|string
+     */
+    public $discount;
+
+    /**
+     * @var array|string
+     */
+    public $fine;
+
+    /**
+     * @var array|string
+     */
+    public $interest;
+
+    /**
      * @param  string  $dueDate
      */
     public function setDueDate($dueDate)
     {
         $this->dueDate = static::convertDateTime($dueDate);
+    }
+
+    /**
+     * @param  string  $originalDueDate
+     */
+    public function setOriginalDueDate($originalDueDate)
+    {
+        $this->originalDueDate = static::convertDateTime($originalDueDate);
+    }
+
+    /**
+     * @param  string  $paymentDate
+     */
+    public function setPaymentDate($paymentDate)
+    {
+        $this->paymentDate = static::convertDateTime($paymentDate);
+    }
+
+    /**
+     * @param  string  $clientPaymentDate
+     */
+    public function setClientPaymentDate($clientPaymentDate)
+    {
+        $this->clientPaymentDate = static::convertDateTime($clientPaymentDate);
+    }
+
+    /**
+     * @param  string  $creditDate
+     */
+    public function setCreditDate($creditDate)
+    {
+        $this->creditDate = static::convertDateTime($creditDate);
+    }
+
+    /**
+     * @param  string  $estimatedCreditDate
+     */
+    public function setEstimatedCreditDate($estimatedCreditDate)
+    {
+        $this->estimatedCreditDate = static::convertDateTime($estimatedCreditDate);
     }
 }
