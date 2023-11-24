@@ -1,4 +1,5 @@
 <?php
+
 namespace Softr\Asaas\Entity;
 
 /**
@@ -52,6 +53,11 @@ final class Subscription extends \Softr\Asaas\Entity\AbstractEntity
      * @var bool
      */
     public $updatePendingPayments;
+
+    /**
+     * @var string
+     */
+    public $externalReference;
 
     /**
      * @var array
@@ -162,6 +168,21 @@ final class Subscription extends \Softr\Asaas\Entity\AbstractEntity
      * @var string
      */
     public $endDate;
+
+    /**
+     * @var array
+     */
+    public $discount = [];
+
+    /**
+     * @var array
+     */
+    public $interest = [];
+
+    /**
+     * @var array
+     */
+    public $fine = [];
 
     /**
      * @param  string  $nextDueDate

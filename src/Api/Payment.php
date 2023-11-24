@@ -1,4 +1,5 @@
 <?php
+
 namespace Softr\Asaas\Api;
 
 // Entities
@@ -11,6 +12,23 @@ use Softr\Asaas\Entity\Payment as PaymentEntity;
  */
 class Payment extends \Softr\Asaas\Api\AbstractApi
 {
+    /**
+     * Get paginate payments
+     *
+     * @param   array  $filters  (optional) Filters Array
+     * @return  array  Payments Array
+     */
+    public function getPaginate(array $filters = [])
+    {
+        $payments = $this->adapter->get(sprintf('%s/payments?%s', $this->endpoint, http_build_query($filters)));
+
+        $payments = json_decode($payments);
+
+        $this->extractMeta($payments);
+
+        return $payments;
+    }
+
     /**
      * Get all payments
      *
@@ -25,8 +43,7 @@ class Payment extends \Softr\Asaas\Api\AbstractApi
 
         $this->extractMeta($payments);
 
-        return array_map(function($payment)
-        {
+        return array_map(function ($payment) {
             return new PaymentEntity($payment);
         }, $payments->data);
     }
@@ -61,8 +78,7 @@ class Payment extends \Softr\Asaas\Api\AbstractApi
 
         $this->extractMeta($payments);
 
-        return array_map(function($payment)
-        {
+        return array_map(function ($payment) {
             return new PaymentEntity($payment);
         }, $payments->data);
     }
@@ -82,8 +98,7 @@ class Payment extends \Softr\Asaas\Api\AbstractApi
 
         $this->extractMeta($payments);
 
-        return array_map(function($payment)
-        {
+        return array_map(function ($payment) {
             return new PaymentEntity($payment);
         }, $payments->data);
     }
@@ -127,5 +142,15 @@ class Payment extends \Softr\Asaas\Api\AbstractApi
     public function delete($id)
     {
         $this->adapter->delete(sprintf('%s/payments/%s', $this->endpoint, $id));
+    }
+    
+    /**
+     * Delete Payment By Id
+     *
+     * @param  string|int  $id  Payment Id
+     */
+    public function deleteInstallment($id)
+    {
+        $this->adapter->delete(sprintf('%s/installments/%s', $this->endpoint, $id));
     }
 }

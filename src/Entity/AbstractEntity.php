@@ -66,7 +66,7 @@ abstract class AbstractEntity
             return;
         }
 
-        $date = \DateTime::createFromFormat('d/m/Y', $date);
+        $date = new \DateTime($date);
 
         if(!$date)
         {
