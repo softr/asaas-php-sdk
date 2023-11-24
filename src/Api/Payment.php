@@ -143,4 +143,14 @@ class Payment extends \Softr\Asaas\Api\AbstractApi
     {
         $this->adapter->delete(sprintf('%s/payments/%s', $this->endpoint, $id));
     }
+    
+    /**
+     * Delete Payment By Id
+     *
+     * @param  string|int  $id  Payment Id
+     */
+    public function deleteInstallment($id)
+    {
+        $this->adapter->delete(sprintf('%s/installments/%s', $this->endpoint, $id));
+    }
 }
